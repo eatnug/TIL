@@ -17,6 +17,7 @@ js는 인터프리터 언어, 웹 페이지 스크립트 언어이다.
 js는 runtime에 call stack, task queue, event loop를 가진다.
 chrome의 js engine인 V8은 call stack과 heap을 가지고, chrome이 task queue와 even loop, webapis를 제공한다.
 
+![js runtime](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjskarr6MnjAhWB7WEKHYRdDPgQjRx6BAgBEAU&url=https%3A%2F%2Fjoshua1988.github.io%2Fweb-development%2Ftranslation%2Fjavascript%2Fhow-js-works-inside-engine%2F&psig=AOvVaw2m_odD23YQ-mTZSMznM9OU&ust=1563929312745083)
 - V8엔진은 코드를 읽을것이고 함수를 호출하면서 call stack에 쌓는다. 
 - setTimeout 같이 js 외부에서 제공되는 함수들(?)은 webapis로 쫓겨나고 작업이 끝나면 task queue에 추가된다.
 - event loop은 call stack이 비어있는지 확인하고 만약 비어있다면  task queue에서 하나를 들고와서 call stack에 넣는다.
