@@ -20,3 +20,5 @@ ___
 - 함수형 프로그래밍
 - 정규식
 - 아키텍쳐
+- Web Worker
+- Service Worker
