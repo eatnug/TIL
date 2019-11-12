@@ -1,4 +1,4 @@
-# Git:Basic
+# Git:Basics
 
 Git의 기본 원리와 Github을 이용한 다른 사용자와의 협업 방법을 정리해보았다.
 
