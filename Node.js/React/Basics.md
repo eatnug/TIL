@@ -1,3 +1,5 @@
+리액트 공부를 간단히 정리할 겸 [공식문서](https://reactjs.org/docs/hello-world.html)의 기본개념 부분을 요약해보았다.
+
 ## React는?
 
 React는 JS의 프론트엔드 라이브러리이다. 간단히 설명하자면 React는 [virtual DOM을 이용한 렌더링](https://eatnug.github.io/web/virtualDOM/)을 사용해 UI를 컴포넌트 단위로 구현한다. 공식 스타터킷 CRA 또는 서버사이드 렌더링을 위한 프레임워크인 Next.js 등을 활용해 프로젝트를 구축할 수 있다.
