@@ -1,5 +1,7 @@
 <!--https://github.com/EatNug/TIL/blob/master/-->
 
+[![HitCount](http://hits.dwyl.io/eaTnuG/TIL.svg)](http://hits.dwyl.io/eaTnuG/TIL)
+
 Today I Learned
 ___
 
