@@ -9,3 +9,7 @@
 - Mobx 관련
   - https://velog.io/@velopert/begin-mobx
   - https://www.youtube.com/watch?v=NvzSWrOIvVw
+- 인터뷰
+    - https://h5bp.org/Front-end-Developer-Interview-Questions/translations/korean/
+    - https://milooy.wordpress.com/2018/02/07/moving-job/
+    - https://medium.com/dev-bits/a-perfect-guide-for-cracking-a-javascript-interview-a-developers-perspective-23a5c0fa4d0d
