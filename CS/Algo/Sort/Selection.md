@@ -29,6 +29,7 @@ for ( i= 0 ~ N-2 ){
 - `bubble`에 비해서 교환 횟수가 적다.
 - `in-place sorting`
 - `unstable`
+- [참고](https://github.com/GimunLee/tech-refrigerator/blob/master/Algorithm/%EC%84%A0%ED%83%9D%20%EC%A0%95%EB%A0%AC%20(Selection%20Sort).md#%EC%84%A0%ED%83%9D-%EC%A0%95%EB%A0%AC-selection-sort)
 
 
 
