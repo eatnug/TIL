@@ -1,0 +1,59 @@
+복잡하고 어려운 HW 부분을 캡슐화해서 사용자의 컴퓨터 사용을 도와주는 인터페이스. 리소스 매니지먼트가 큰 역할이다.
+
+- User Space: shell과 user application들로 구성
+- Kernel Space: 메모리에 상주하는 핵심부분. 시스템 전반 관리. 리소스 매니지먼트, 하드웨어 인터페이스 등
+    - syscall로 소프트웨어로 부터의 시스템 관리 코드 실행
+    - interrupt로 하드웨어로 부터의 시스템 관리 코드 실행
+    - 역할
+        - Process Management
+        - Processor Scheduling
+        - Memory Management
+        - Device Driver
+        - IPC
+        - Network
+        - File System
+- Process: 현재 실행중인 프로그램의 instance. 디스크로부터 메모리에 적재되어 있는 상태. CPU를 할당 받을 수 있다.
+    - PCB(Process Control Block): 프로세스의 메타 데이터를 저장하고 있는 블록. PID, 상태, PC, ...
+    - 각각의 프로세스는 독자적인 code, data, heap, open files를 가진다
+    - code: 코드 자체
+    - data: 전역 변수, 정적 변수, 배열 등 초기화 된 데이터
+    - heap: 동적 할당
+    - stack: 지역변수, 매개변수, 리턴 값등 임시 메모리
+- Thread: 프로세스 내부의 동작 흐름
+    - 각각의 thread는 code, data, files을 공유.
+    - stack도 공유하지만 각각의 stack pointer를 가지기 때문에 각각의 stack을 쓴다고 보아도 무방
+    - ctxswtch 오버헤드가 적다
+    - 하지만 global var 공유해서 에러가 발생할 수 있다.
+- Interrupt: 프로그램 실행 중 어떤 요인으로 현재 작업을 중단하고, 다른 작업을 처리하는 것.
+    - 높은 우선순위의 작업이 발생하면 일어난다. 주로 I/O
+    - interrupt 없이 I/O 하려면 계속 확인하는 polling이 필요해서 비효율적.
+- Syscall: 소프트웨어로 부터 커널에 접근하기 위한 인터페이스
+    - fork(): 새 프로세스 생성
+    - exec(): 프로세스 내용 복사
+    - file read 등
+- 컨텍스트 스위칭
+    - 인터럽트가 발생하거나 할당된 시간을 다 쓴 경우 다른 프로세스로 변경될 때 발생한다
+    - 이전 프로세스의 진행 상태를 PCB에 저장하고 다른 프로세스의 PCB를 읽어온다.
+    - 빠른 일처리를 가능케하지만 오버헤드 주의해야함
+- CPU 스케쥴링
+    - 여러 프로세스들에게 CPU를 적절히 할당해주는 것
+    - preemptive scheduling
+    - FCFS
+    - SJF
+    - Priority
+    - RR
+    - Multi-Level-Queue
+- Deadlock
+    - 필요한 리소스를 얻지 못해서 다음 처리를 하지 못하는 상태
+    - 컨커런트한게 돌아갈때 공유자원을 보호하기 위해 한 작업에만 할당한다
+    - 필요한 자원이 다른 곳에 할당 되어 있어서 얻을 수 없으면 무한정 기다림.
+- Race condition
+    - 공유 자원에 대해 여러 프로세스가 동시에 접근할 때, 결과값에 영향을 줄 수 있는 상태.
+    - Critical Section: 코드 중 공유자원에 접근하는 부분. 같은 부분에 접근하는 다른 프로그램 코드의 Crit-Sec이 존재한다. 
+    - Semaphore: 공유 자원에 대한 접근을 제한하는 방법. 한 Crit-Sec 수행 중 다른 Crit-Sec은 기다리게 하는 것.
+    - Mutex는 이진 Semaphore
+    - 둘 다 while 돌면서 들어갈 수 있는지 확인하는 걸로 기억. busy-waiting
+- 메모리 관리
+    - 프로세스들이 메모리에 올랐다 내렸다 하면 빈 공간이 발생하는데 이를 fragmentaion이라고 한다.
+    - 페이징: 고정크기의 메모리공간에 프로그램을 잘라서 올리는 방법. 내부 단편화 발생
+    - 세그멘테이션: 가변크기의 메모리공간에 프로그램을 잘라서 올리는 방법. 외부 단편화 발생
