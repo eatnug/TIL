@@ -1,0 +1,73 @@
+인터뷰준비!
+
+- CS
+    - 알고리즘
+        - 정렬: 버블, 선택, 삽입, 쉘, 퀵, 머지, 힙, 기수
+	    - 최적화 문제: 가능한 해들 중 가장 좋은 해를 찾는 문제, 그리디, DP 알고리즘
+        - 그래프: DFS, BFS, MST, Dijkstra, Backtracking, Approx
+        - 게임: Minmax, Alpha-Beta prunning, A*
+        - [Markdown]()
+    - 자료구조
+        - Array vs LinkedList: 배열은 인덱스를 통해 랜덤 접근이 가능. 하지만 추가, 삭제가 어렵다. LL은 반대.
+        - Stack and Queue: Stack은 LIFO. push pop, Queue는 FIFO Q,DQ
+        - Tree: 비선형, 노드,엣지, B-tree, BST, RBT 
+        - Binary Heap: 일종의 Tree, 배열 기반 Complete B-tree, Max heap, Min heap, Heapify
+        - Hashtable: KeyValue. Key는 결국 인덱스이므로 Saerch가 빠르다. 각각 고유한 키를 줘서 삽입,삭제의 오버헤드도 없앤다. Hash function
+        - Graph: 정점과 간선의 집합. (Un)Directed, Degree, weight, DFS(Stack),BFS(Q), Min Spannig T
+    - OS
+        - 프로세스, 스레드: 메모리 안에서 실행중인 작업, 스레드는 프로세스 내의 작업 흐름 단위
+        - 인터럽트: CPU 뺏어가기. I/O or other Proc
+        - 시스템콜: 커널모드 진입을 위한 인터페이스
+        - PCB와 컨텍스트 스위칭: CPU가 프로세스 여러개를 실행한다. 이때 각 프로세스 실행에 필요한 메타데이터를 가지고 있는 블럭을 PCB라고 함. 이를 바꾸는게 스위칭
+        - IPC: Inter Process Communication. 프로세스끼리 통신, 파이프라이닝, ...
+        - CPU 스케쥴링: 여러 프로세스 사이에 CPU 할당하는 것, Round-robin, ...
+        - 데드락: 공유 리소스에 대한 접근이 제한되어서 끝없이 기다리는 것. mutex, 순환 참조 ? 
+        - 레이스 컨디션: concurrency 상황에서 동시에 경쟁적으로 공유자원에 접근하는 형태. 결과의 determinacy에 영향
+        - 세마포어, 뮤텍스: 공유자원 접근 제한하는 방법. 뮤텍스 = 이진 세마포어
+        - 페이징 & 세그멘테이션: 메모리 관리. 고정크기 - 페이징, 가변크기 - 세그멘테이션
+        - [Mardown]()
+    - 네트워크
+        - OSI 7: 통신의 단계를 계층화. 각각 레이어의 역할을 구분.
+        - TCP, UDP: TCP는 connection oriented, UPD는 connectionless
+        - 대칭키 & 공개키: 암호화 복호화에 같은 키를 사용하는가 아닌가.
+        - HTTP & HTTPS: HTTP + SSL. 공개키 방식으로 암호화
+        - 로드밸런싱: 서버 스케일 아웃 하고 나뉜 서버에 부하를 분산시켜주는 것
+    - DB
+        - 인덱스: 
+        - 키: 후보키, 기본키, 대체키, 슈퍼키
+        - SQL, NoSQL: 관계형, 비관계형
+        - 정규화: 
+        - Anomally: 정규화를 안하면?
+        - 트랜잭션: DB 상태를 변화시키기 위한 작업 단위
+        - 트랜잭션 격리수준
+    - 기타
+- 개발
+    - JS 
+        - 비동기: event loop
+        - This: 실행 컨텍스트
+        - Clojure: 스코프 넘나들기, 외부함수에 의해 리턴되는 내부함수를 지칭함
+        - ...
+    - 리액트
+        - 개념
+            - virtualDOM
+            - partial rendering
+        - 상태관리
+            - Redux
+            - Mobx
+    - 기타
+        - 웹, 브라우저
+            - 브라우저 동작 원리
+            - DOM
+            - CORS
+            - 크로스 브라우징
+            - CSR & SSR
+        - CSS
+            - CSS Methodology
+            - normalize.css vs reset.css
+- 기타
+    - 내 프로젝트
+        - hufSniper
+        - Later
+
+
+
