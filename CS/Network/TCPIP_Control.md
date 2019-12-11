@@ -1,0 +1,27 @@
+## TCP/IP 흐름제어/혼잡제어
+
+- TCP/IP에서 발생가능한 문제점
+    - 손실
+    - 순서 바뀜
+    - Congestion: 혼잡
+    - Overload
+- 흐름제어: 송수신측 데이터 처리 속도 차이를 해결하기 위한 방법.
+    - 기본적으로 receiver가 packet을 지나치게 많이 받지 않도록 조절하는 것?
+    - Stop and Wait
+        - 전송한 패킷에 대한 응답을 받고서 다음 패킷을 전송하는 것?. 지정한 시간동안 안오면 에러라고 인식
+    - Sliding Window
+        - Stop and Wait에서는 ack 받을 동안 다른걸 못보낸다. 이를 해결하기 위한 방법
+        - Sender
+            - LastFrameSent - LastAckReceived <= SenderWindowSize 이면 정상 상태
+            - 그러니까 결국, 보내는게 ack 받는거보다 빨리 갈건데,
+            - 이 둘의 갭이 어느정도 일 때는 정상적인 것이다 라고 정하는 것
+            - 이 갭을 window라고 하는 것
+        - Receiver
+            - LastAvailableFrame-LastFrameReceived <= ReceiverWindowSize
+            - 음,,, RWS를 정해뒀다고 하자
+            - 일단 들어오는 Frame을 순서대로 ACK 보낸다고 생각해라. 만약 중간에 안온게 있다면 뒤에거도 못보냄
+            - LFR + RWS 보다 Frame이 더 쌓여있으면 문제가 발생했다고 간주하는거임
+- 혼잡제어: 네트워크 혼잡을 피하기위해 송신측에서 보내는 데이터의 전송 속도(패킷 량)를 강제로 줄이는 것.
+    - AIMD, Slow Start: 천천히 윈도우 사이즈를 늘려가다가, 혼잡해지면 바로 확 줄인다.( AIMD는 1씩 늘이고 반으로 줄이고, Slowstart는 지수함수꼴로 증가하다가 1로 줄인다.)
+    - Fast Retransmit: 받는 쪽에서 잘 안오면, 중간에 빠지면, 이를 ACK로 알려주는것. 이에 따른 처리한다.
+    - Fast Recovery: 혼잡 상태에서 window size를 1로 말고 반으로 줄이고 선형증가
