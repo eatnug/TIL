@@ -43,3 +43,8 @@ CRUD도 이런식으로 커맨드로 가능하고, 특이한 점은 js 문법을
 하지만 실제로 CRUD 작업은 다른 언어의 코드속에서 작성할 것이므로 넘어간다.
 
 [mongodb in node: mongoose]()
+
+## 출처
+
+- [Poiemaweb](https://poiemaweb.com/mongdb-basics)
+- [Velopert](https://velopert.com/436)
