@@ -24,9 +24,7 @@ ___
 - OS
 - 알고리즘
 - 함수형 프로그래밍
-- 정규식
 - 아키텍쳐
-- JS:Web Worker
-- JS:Service Worker
-- Webpack
-- Sass
+- service worker
+- more of an webpack
+- typescript
