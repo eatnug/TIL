@@ -18,13 +18,16 @@ ___
 - [Node.js/React/StateManagement-Redux](https://github.com/eaTnuG/TIL/blob/master/Node.js/React/StateManagement-Redux.md)
 - [Java/CheatSheet](https://github.com/eaTnuG/TIL/blob/master/Java/CheatSheet.md)
 - [CS](https://github.com/eaTnuG/TIL/tree/master/CS)
+
 # Todo
 
-- TDD
-- OS
-- 알고리즘
-- 함수형 프로그래밍
-- 아키텍쳐
-- service worker
-- more of an webpack
+- react-hook-form
 - typescript
+- webpack
+- eslint
+
+# Interest
+
+- TDD
+- AWS
+- Docker
