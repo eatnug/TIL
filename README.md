@@ -10,18 +10,18 @@ Today I Learned
 
 # Index
 
-- [Algorithms](#Algorithms)
-- [DB](#DB)
-- [Network](#Netwokr)
-- [OS](#OS)
-- [Git](#Git)
-- [Javascript](#Javascript)
-- [React&RN](#React&RN)
-- [Node.js](#Node.js)
-- [Java](#Java)
-- [Go](#Go)
-- [CSS](#CSS)
-- [Readings](#Readings)
+- [Algorithms](#algorithms)
+- [DB](#db)
+- [Network](#network)
+- [OS](#os)
+- [Git](#git)
+- [Javascript](#javascript)
+- [React and RN](#react-and-reactnative)
+- [Node.js](#node.js)
+- [Java](#java)
+- [Go](#go)
+- [CSS](#css)
+- [Readings](#readings)
 
 ## Algorithms
 - [Sort]()
@@ -47,7 +47,7 @@ Today I Learned
 - [Regular Expression]()
 - [This]()
 - [Modern Javascript Tutorial]()
-## React&RN
+## React and ReactNative
 - [React Basics]()
 - [React Native Basics]()
 - [Rendering On SPA]()
