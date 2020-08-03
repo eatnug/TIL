@@ -17,7 +17,7 @@ Today I Learned
 - [Git](#git)
 - [Javascript](#javascript)
 - [React and RN](#react-and-reactnative)
-- [Node.js](#node.js)
+- [NodeJs](#nodejs)
 - [Java](#java)
 - [Go](#go)
 - [CSS](#css)
@@ -54,7 +54,7 @@ Today I Learned
 - [State Management - redux]()
 - [App Deployment]()
 - [Code push]()
-## Node.js
+## NodeJs
 - [Nest]()
 - [Mongoose]()
 - [Webpack Baisc]()
