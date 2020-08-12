@@ -16,12 +16,18 @@ Image, Maview.Marker, PrgoressViewIOS 등 특정 컴포넌트들은 소스가 �
 yarn global add appcenter-cli
 ```
 
-## 2. CodePush-ify your app
+## 2. Appcenter에 앱과 배포트랙 등록하기
+
+1. `appcenter login`으로 로그인한다.
+1. `appcenter apps create -d {appname} -o {os}(Android/iOS) -p React-Native`로  앱을 생성한다. `appname`을 `-ios/-android`로 나누어서 앱 두개로 관리하는 형태로 했다.
+1. `appcenter codepush deployment add -a {username/appname} {trackname}` 으로 앱에 대한 배포트랙을 생성한다. 이때 터미널에 배포 키가 보여진다.
+1. 만약 배포키를 놓쳤을 경우 `appcenter codepush deployment list -a {username/appname} -k` 으로 확인할 수 있다.
+
+## 3. CodePush-ify your app
 
 ```
 yarn add react-native-code-push
 ```
-
 ### iOS Setup
 
 1. 디펜던시 설치
@@ -93,24 +99,6 @@ return [CodePush bundleURL];
 </plist>
 ```
 
-#### 코드 사이닝 셋업 (iOS)
-
-번들 사이닝을 위해 코드푸시에 퍼블릭 키를 넘겨준다는 것 같다.
-
-```xml
-<plist version="1.0">
-  <dict>
-    <!-- ...other configs... -->
-
-    <key>CodePushPublicKey</key>
-        <string>-----BEGIN PUBLIC KEY-----
-MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANkWYydPuyOumR/sn2agNBVDnzyRpM16NAUpYPGxNgjSEp0etkDNgzzdzyvyl+OsAGBYF3jCxYOXozum+uV5hQECAwEAAQ==
------END PUBLIC KEY-----</string>
-
-    <!-- ...other configs... -->
-  </dict>
-</plist>
-```
 
 ### Android 셋업
 
@@ -152,21 +140,4 @@ public class MainApplication extends Application implements ReactApplication {
  </resources>
 ```
 
-#### 코드 사이닝 셋업
 
-`android/app/src/main/res/values/strings.xml`에 `CodePushPublicKey`를 추가한다.
-
-```xml
-<resources>
-   <string name="app_name">my_app</string>
-   <string name="CodePushPublicKey">-----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtPSR9lkGzZ4FR0lxF+ZA
-P6jJ8+Xi5L601BPN4QESoRVSrJM08roOCVrs4qoYqYJy3Of2cQWvNBEh8ti3FhHu
-tiuLFpNdfzM4DjAw0Ti5hOTfTixqVBXTJPYpSjDh7K6tUvp9MV0l5q/Ps3se1vud
-M1/X6g54lIX/QoEXTdMgR+SKXvlUIC13T7GkDHT6Z4RlwxkWkOmf2tGguRcEBL6j
-ww7w/3g0kWILz7nNPtXyDhIB9WLH7MKSJWdVCZm+cAqabUfpCFo7sHiyHLnUxcVY
-OTw3sz9ceaci7z2r8SZdsfjyjiDJrq69eWtvKVUpredy9HtyALtNuLjDITahdh8A
-zwIDAQAB
------END PUBLIC KEY-----</string>
-</resources>
-```
