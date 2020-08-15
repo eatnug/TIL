@@ -4,11 +4,11 @@
 
 ios (7+), android (4.1+), windows 지원한다.
 
-## 지원하는 컴포넌트
+# 지원하는 컴포넌트
 
 Image, Maview.Marker, PrgoressViewIOS 등 특정 컴포넌트들은 소스가 되는 이미지를 코드푸시 서비스로 업데이트 할 수 있다. 반면에 SliderIOS나 Video는 불가능하다.
 
-# 시작하기
+# 세팅하고 
 
 ## 1. Install App Center CLI
 
@@ -140,4 +140,10 @@ public class MainApplication extends Application implements ReactApplication {
  </resources>
 ```
 
+## 4. 배포하기
+
+앱이 세팅되고, appcenter 로그인이 된 상태에서 다음 명령어로 배포할 수 있다.
+```
+appcenter codepush release-react -a {username/appname}
+```
 
