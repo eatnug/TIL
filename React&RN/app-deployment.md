@@ -16,6 +16,17 @@ keychain access - certificate assistant - request a certificate ~~ 를 선택해
 
 이때 이 인증서와, 프로파일, 앱 아이디 등은 모두 다 연결되어있어서, Xcode에서 무언가 기능을 추가한다거나 하면 인증서과 프로파일 쪽에서 같은 기능을 커버하도록 수정되어야 하는 것 같다.
 
+### 일단은...
+
+처음에는 각 개발자마다 (저마다의 머신의) 키체인에서 ca에 인증서 요청을 통해 인증서를 발급받고, 프로파일 생성때 해당 인증서를 모두 포함해주는 형태로 사용했다.
+
+
+그 다음에는 팀 계정을 등록하고 App Store Connect에 등록된 계정으로 개발 team 고르고 인증서와 프로필은 automaitc signing을 하고 있다. 
+
+
+fastlane을 사용하게 되면 제대로 발급받은 인증서와 프로필이 필요하다.
+
+
 ## android
 
 안드로이드는 빌드 스크립트를 수정하는 과정이 있었다. [dev-yakuza님의 글](https://dev-yakuza.github.io/ko/react-native/android-running-on-device/)과 [react native 공식 문서](https://reactnative.dev/docs/signed-apk-android)를 적절히 따라했다.
@@ -25,7 +36,7 @@ keychain access - certificate assistant - request a certificate ~~ 를 선택해
 ```bash
 #  ./android/app
 
-keytool -genkeypair -v -keystore my-upload-key.keystore -alias upload-key -keyalg RSA -keysize 2048 -validity 10000
+keytool -genkeypair -v -keystore {keyname}.keystore -alias {keyalias} -keyalg RSA -keysize 2048 -validity 10000
 ```
 
 그 후 빌드 세팅에 내 업로드 키를 설정해줬다.
@@ -73,3 +84,45 @@ cd android
 ```
 
 빌드 된 파일은 `android/app/build/outputs/bundle/release/`에 생성된다.
+
+### 일단은...
+
+실제로 사용할 때는 키스토어에 대한 정보를 담은 값들을 숨기고 싶어서 `keystore.properties` 파일을 만들어서 내부적으로 공유했다.
+
+```
+<!-- android/keystore.properties -->
+MYAPP_RELEASE_STORE_FILE={keyname}.keystore
+MYAPP_RELEASE_KEY_ALIAS={keyalias}
+MYAPP_RELEASE_STORE_PASSWORD={storepassword}
+MYAPP_RELEASE_KEY_PASSWORD={keypassword}
+```
+
+그리고 해당 값을 참조하는 부분도 변경했다.
+
+```gradle
+// android/app/build.gradle
+...
+def keystorePropertiesFile = rootProject.file("keystore.properties");
+...
+android {
+    ...
+        signingConfigs {
+            release {
+                if(keystorePropertiesFile.exists()){
+                    def keystoreProperties = new Properties();
+                    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+                    storeFile file(keystoreProperties['MYAPP_RELEASE_STORE_FILE'])
+                    storePassword keystoreProperties['MYAPP_RELEASE_STORE_PASSWORD']
+                    keyAlias keystoreProperties['MYAPP_RELEASE_KEY_ALIAS']
+                    keyPassword keystoreProperties['MYAPP_RELEASE_KEY_PASSWORD']
+                }
+            }
+            ...
+        }
+    ...
+}
+
+```
+
+이런식으로.
+
