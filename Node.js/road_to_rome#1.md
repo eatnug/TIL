@@ -33,3 +33,23 @@ rome이 제시하는 fix에는 `safe fix`와 `suggested fix`가 있다. 전자�
 ### | Review, Suppressions, ...
 
 `--review` 플래그를 사용해서 린팅을 하면 발생한 에러에 대해서 어떤 액션을 취할지 선택할 수 있다. 그리고 모든 에러는 각각에 대한 설명과 어떤 행동을 취해야 하는지 등에 대한 정보를 담은 diagnotics 를 가진다. 또 특정한 린트 룰을 무시하고 싶다면 `eslint-disable` 처럼 주석 처리된 `rome-ignore <category> <possilbe other category>: <reason why supress>` 이런 형태의 메시지를 파일에 추가하면 된다.
+
+## CLI
+
+- `rome check`
+- `rome config`
+- `rome init`
+- `rome recover`
+- `rome start`, `rome stop`
+
+위와 같은 커맨드들이 있고, shell completion도 추가할 수 있다.
+
+## Project configuration
+
+`name`, `extends`, `root` 등의 명령어로 프로젝트 세팅이 가능하다.
+
+설정 파일은 `.config/rome.rjson`이나 `./config/rome.json` 또는 `pakage.json.rome`에 위치시킬 수 있다.
+
+## rjson
+
+좀 더 간소화되고 주석도 달 수 있는 json 포맷인 rome-json을 사용한다.
