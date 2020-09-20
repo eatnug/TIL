@@ -4,6 +4,10 @@
 
 Today I Learned
 
+
+### todos
+
+- [android & ios react native bridge](https://dev.to/evenmik/react-native-bridge-for-android-and-ios-405k)
 ---
 
 공부한 것 들을 그때그때 단편적으로 러프하게 정리합니다. 좀 더 다음어진 글은 [블로그](https://eatnug.github.io/)에 기록합니다.
