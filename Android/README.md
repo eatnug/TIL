@@ -1,0 +1,2 @@
+- [Kotlin Basic Syntax](https://kotlinlang.org/docs/reference/basic-syntax.html)
+- [Kotlin으로 Android 앱 개발](https://developer.android.com/kotlin?hl=ko)
