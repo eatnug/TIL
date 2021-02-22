@@ -4,86 +4,135 @@
 
 Today I Learned
 
-
-### todos
+<!-- ### todos
 
 - [android & ios react native bridge](https://dev.to/evenmik/react-native-bridge-for-android-and-ios-405k)
----
+
+-->
 
 공부한 것 들을 그때그때 단편적으로 러프하게 정리합니다. 좀 더 다음어진 글은 [블로그](https://eatnug.github.io/)에 기록합니다.
 
-# Index
+___index___
 
-- [Algorithms](#algorithms)
-- [DB](#db)
-- [Network](#network)
-- [OS](#os)
-- [Git](#git)
-- [Javascript](#javascript)
-- [React and RN](#react-and-reactnative)
-- [NodeJs](#nodejs)
-- [Java](#java)
-- [Go](#go)
-- [CSS](#css)
-- [Readings](#readings)
+- [CS]
+  - [Algorithms](#algorithms)
+  - [DB](#db)
+  - [Network](#network)
+  - [OS](#os)
+- [Language]
+  - [Javascript](#javascript)
+  - [Java](#java)
+  - [Go](#go)
+- [FE]
+  - [React and RN](#react-and-reactnative)
+  - [CSS](#css)
+  - [Mobile](#Mobile)
+- [BE]
+  - [NodeJs](#nodejs)
+- [ETC]
+  - [Git](#git)
+
+<br /><br />
+
+# CS
 
 ## Algorithms
-- [Sort]()
-- [Graph]()
-- [Optimization]()
-## DB
-- [MongoDB]()
-## Network
-- [OSI 7 Layers]()
-- [HTTPS]()
-- [TCP&UDP]()
-- [TCPIP_Control]()
-- [ETC]()
-## OS
-- [Some Points]()
-## Git
-- [Basics]()
-- [Commit message convention]()
-- [Change Commit Message with Rebase]()
-## Javascript
-- [Basic Syntax]()
-- [Async]()
-- [Regular Expression]()
-- [This]()
-- [Modern Javascript Tutorial]()
-## React and ReactNative
-- [React Basics]()
-- [React Native Basics]()
-- [Rendering On SPA]()
-- [State Management - redux]()
-- [App Deployment]()
-- [Code push]()
-## NodeJs
-- [Nest]()
-- [Mongoose]()
-- [Webpack Baisc]()
-- [Webpack Modules and Plugins]()
-## Java
-- [Cheat Sheet for me]()
-## Go
-- [Go-tour#1]()
-- [Go-tour#2]()
-## CSS
-- [CSS]()
-- [SASS]()
-## Reading
-- [리팩토링2판]()
 
+- [Sort](./Algorithms/Sort)
+- [Graph](./Algorithms/Graph)
+- [Optimization](./Algorithms/Opt)
+
+## DB
+
+- [MongoDB](./DB/mongodb.md)
+- [ORM과 영속성](./DB/orm_and_persistance.md)
+
+## Network
+
+- [OSI 7 Layers](./Network/OSI.md)
+- [HTTPS](./Network/HTTPS.md)
+- [TCP&UDP](./Networks/TCP&UDP.md)
+- [TCPIP_Control](./Networks/TCPIP_Control.md)
+- [ETC](./Networks/ETC.md)
+
+## OS
+
+- [Intro](./OS/index.md)
+
+<br /><br />
+
+# Language
+
+## Javascript
+
+- [Basic Syntax](./Javascript/Basic)
+- [Async](./Javascript/Async)
+- [Regular Expression](./Javascript/RegularExpression.md)
+- [This](./Javascript/This.md)
+- [Webpack Baisc](./Node.js/WebpackBasic.md)
+- [Webpack Modules and Plugins](./Node.js/WebpackOneStepFurther.md)
+
+## Java
+
+- [Cheat Sheet for me](./Java/CheatSheet.md)
+
+## Go
+
+- [Go-tour#1](./Go/Go-tour#1.md)
+- [Go-tour#2](./Go/Go-tour#2.md)
+
+<br /><br />
+
+# FE
+
+## React and ReactNative
+
+- [React 기초](./React&RN/ReactBasics.md)
+- [React Native 기초](./React&RN/ReactNativeBasics.md)
+- [SPA에서의 렌더링](./React&RN/RenderingOnSPA.md)
+- [Redux로 상태관리하기](./React&RN/StateManagement-Redux.md)
+- [파일 열기 기능으로 네이티브 맛보기](./React&RN/openFileWith.md)
+- [앱 배포](./React&RN/app-deployment.md)
+- [Codepush](./React&RN/react-native-code-push.md)
+- [Fastlane](./React&RN/fastlane.md)
+
+## CSS
+
+- [CSS](./CSS/CSS.md)
+- [SASS](./CSS/SASS.md)
+
+<br /><br />
+
+# BE
+
+## NodeJs
+
+- [Nest](./Nest)
+- [Mongoose](./Javascript/mongoose.md)
+
+
+<br /><br />
+
+# ETC
+
+## Git
+
+- [Basics](./Git/Basics.md)
+- [Commit message convention](./Git/Commit.md)
+- [Change Commit Message with Rebase](./Git/ChangeCommitMessage.md)
+
+<br /><br />
 # Todo
 
-- react-hook-form
 - typescript
 - webpack
-- eslint
+- BE101
+- AWS
+- Docker
+- DB 개념 (N+1 문제)
+- 객체지향
 
 # Interest
 
 - TDD
-- AWS
-- Docker
 - Design pattern
